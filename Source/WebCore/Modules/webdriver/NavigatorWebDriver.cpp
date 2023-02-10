@@ -49,7 +49,7 @@ bool NavigatorWebDriver::isControlledByAutomation(const Navigator& navigator)
     if (!frame || !frame->page())
         return false;
 
-    return frame->page()->isControlledByAutomation();
+    return false;
 }
 
 NavigatorWebDriver* NavigatorWebDriver::from(Navigator* navigator)
