@@ -95,7 +95,7 @@ String NavigatorBase::platform() const
         struct utsname osname;
         platformName.construct(uname(&osname) >= 0 ? makeString(osname.sysname, " ", osname.machine) : emptyString());
     });
-    return platformName->isolatedCopy();
+    return "MacIntel"_s;
 #elif PLATFORM(IOS_FAMILY)
     return deviceName();
 #elif OS(MACOS)
