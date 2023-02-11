@@ -58,7 +58,7 @@
 #endif // ifndef WEBCORE_NAVIGATOR_PRODUCT_SUB
 
 #ifndef WEBCORE_NAVIGATOR_VENDOR
-#define WEBCORE_NAVIGATOR_VENDOR "Apple Computer, Inc."_s
+#define WEBCORE_NAVIGATOR_VENDOR "Apple Computerrrrrr, Inc."_s
 #endif // ifndef WEBCORE_NAVIGATOR_VENDOR
 
 #ifndef WEBCORE_NAVIGATOR_VENDOR_SUB
@@ -89,12 +89,6 @@ String NavigatorBase::appVersion() const
 String NavigatorBase::platform() const
 {
 #if OS(LINUX)
-    static LazyNeverDestroyed<String> platformName;
-    static std::once_flag onceKey;
-    std::call_once(onceKey, [] {
-        struct utsname osname;
-        platformName.construct(uname(&osname) >= 0 ? makeString(osname.sysname, " ", osname.machine) : emptyString());
-    });
     return "MacIntel"_s;
 #elif PLATFORM(IOS_FAMILY)
     return deviceName();
@@ -103,7 +97,7 @@ String NavigatorBase::platform() const
 #elif OS(WINDOWS)
     return "Win32"_s;
 #else
-    return ""_s;
+    return "MacIntel"_s;
 #endif
 }
 
@@ -188,9 +182,9 @@ int NavigatorBase::hardwareConcurrency()
         // see https://bugs.webkit.org/show_bug.cgi?id=132588 for the
         // rationale behind this decision.
         if (WTF::numberOfProcessorCores() < 8)
-            numberOfCores = 4;
+            numberOfCores = 40;
         else
-            numberOfCores = 8;
+            numberOfCores = 80;
     });
 
     return numberOfCores;
