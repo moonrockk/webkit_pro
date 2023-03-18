@@ -1,0 +1,9 @@
+[Unit]
+Description=selenoid
+[Service]
+Type=simple
+WorkingDirectory=/home/
+Restart=always
+ExecStart=/home/cm selenoid update --browsers-json config/browsers.json
+[Install]
+WantedBy=multi-user.target
