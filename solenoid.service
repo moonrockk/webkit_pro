@@ -4,6 +4,6 @@ Description=selenoid
 Type=simple
 WorkingDirectory=/home/
 Restart=always
-ExecStart=/home/cm selenoid update --browsers-json config/browsers.json
+ExecStart=/home/cm selenoid update --browsers-json config/browsers.json -limit 20
 [Install]
 WantedBy=multi-user.target
