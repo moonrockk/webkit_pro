@@ -1,3 +1,3 @@
 
 
-{"MiniBrowser": {"default": "14.0","versions": {"14.0": {"image": "moonrockkk/sofa:14.0","port": "4444","tmpfs": {"/tmp":"size=512m"},"privileged": true}}}}
+{"MiniBrowser": {"default": "1","versions": {"1": {"image": "moonrockkk/sofa:14.0","port": "4444","tmpfs": {"/tmp":"size=512m"},"privileged": true}}}}
