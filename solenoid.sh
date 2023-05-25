@@ -6,7 +6,7 @@ chmod +x ./home/cm
 mkdir /home/config
 wget https://raw.githubusercontent.com/moonrockk/WebKit_Pro/main/browsers.json -O /home/config/browsers.json
 wget https://raw.githubusercontent.com/moonrockk/WebKit_Pro/main/solenoid.service -O /lib/systemd/system/selenoid.service
-screen -d -m docker pull moonrockkk/sofa:14.0
-screen -d -m docker pull selenoid/video-recorder
+docker pull moonrockkk/sofa:14.0
+docker pull selenoid/video-recorder
 systemctl daemon-reload
 systemctl enable selenoid.service
